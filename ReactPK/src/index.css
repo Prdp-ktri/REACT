@@ -13,3 +13,7 @@ body{
 body{
   background-color: #111;
 }
+button{
+  background-color: turquoise;
+  padding: 5px 10px;
+}
