@@ -1,3 +1,6 @@
-document.createElement("h1");
+var h1 = React.createElement('h1',null,"Hello from React")
 
-console.log(h1);
+var parent = document.querySelector("#parent")
+
+var root = ReactDOM.createRoot(parent)
+root.render(h1)
