@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import './style.css'
 
 const App = () => {
 
@@ -32,6 +33,11 @@ const App = () => {
       <h3>Number is {num}</h3>
       <button onClick={()=>setNum(num+35)}>Increment</button>
       <button onClick={()=>setNum(num-35)}>Decrement</button>
+    </div>
+
+    <div>
+      <h2 className="text-5xl">Hello Guys</h2>
+      <h2>Hello</h2>
     </div>
   </div>
 }
