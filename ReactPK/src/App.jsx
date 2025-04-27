@@ -7,6 +7,12 @@ import Navbar2 from "./components/Navbar2"
 import Card from "./components/Card"
 import Ex from "./components/Ex"
 import axios from 'axios'
+import {Route, Routes} from 'react-router-dom'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Home from './pages/Home'
+import Product from './pages/Product'
+import Header2 from "./components/Header2"
 
 const App = () => {
 
@@ -161,6 +167,16 @@ const App = () => {
             </div>
           })}
         </div>
+      </div>
+
+      <div>
+        <Header2 />
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+        </Routes>
       </div>
       <Footer />
     </div>
