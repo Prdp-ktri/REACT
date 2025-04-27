@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Ex2 = () => {
+const Ex2 = (props) => {
   return (
-    <div>Ex2</div>
+    <div>Mai hun Example 2{props.username}</div>
   )
 }
 

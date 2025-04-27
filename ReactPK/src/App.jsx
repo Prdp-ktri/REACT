@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import './style.css'
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
@@ -6,8 +6,11 @@ import Footer from "./components/Footer"
 import Navbar2 from "./components/Navbar2"
 import Card from "./components/Card"
 import Ex from "./components/Ex"
+import axios from 'axios'
 
 const App = () => {
+
+  const [data, setData] = useState([])
 
   const [num, setNum] = useState(0)
 
@@ -76,6 +79,19 @@ const App = () => {
     },
   ];
 
+  const getData = async  ()=>{
+    const response = await axios.get("https://picsum.photos/v2/list");
+    
+    setData(response.data)
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+  
+
+
+
   return (
     <div>
       <Header />
@@ -136,6 +152,16 @@ const App = () => {
         })}
       </div>
       <Ex name="Sarthak" />
+      <div className="p-10">
+        <div className="p-5 mt-5 bg-gray-950">
+          {data.map(function(elem, idx){
+            return <div key={idx} className="bg-gray-50 text-black flex items-center justify-between w-full px-7 py-6 rounded mb-3">
+              <img className="h-40" src={elem.download_url} alt="" />
+              <h1>{elem.author}</h1>
+            </div>
+          })}
+        </div>
+      </div>
       <Footer />
     </div>
   );
